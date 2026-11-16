@@ -492,7 +492,7 @@ footer {
 
         </div>
 
-        <button onclick="showRSVP()">
+        <button type="button" id="acceptButton">
             Прийняти запрошення →
         </button>
 
@@ -530,10 +530,17 @@ footer {
 
 // RSVP
 
-function showRSVP() {
+document.addEventListener('DOMContentLoaded', () => {
+
+    const acceptButton = document.getElementById('acceptButton');
     const rsvp = document.getElementById('rsvp');
-    rsvp.classList.toggle('active');
-}
+
+    acceptButton.addEventListener('click', () => {
+        rsvp.classList.toggle('active');
+    });
+
+});
+
 
 function answer(accepted) {
     const message = document.getElementById('rsvp-message');
